@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGISTER</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<body style="background-color:gray;">
+    <div class="text-center">
+        <h1 style="padding:50px;color:#33ccff;">
+            <b>REGISTER</b>
+        </h1>
+    </div>
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4" style="background-color:rgba(255,255,255,0.5);">
+            <form method="post" action="register" style="padding-top:50px;text-align:center;padding-bottom:80px">
+                {% csrf_token %}
+                <input type="text" name="username" placeholder="username"><br><br>
+                <input type="text" name="firstname" placeholder="firstname"><br><br>
+                <input type="text" name="lastname" placeholder="lastname"><br><br>
+                <input type="email" name="email" placeholder="email"><br><br>
+                <input type="password" name="password" placeholder="password"><br><br>
+                <input type="password" name="cpassword" placeholder="confirm password"><br><br>
+                <input type="submit" class="btn btn-primary">
+            </form>
+            <p style="text-align:center;color:red;">
+                {% for msg in messages %}
+                    {{msg}}
+                {% endfor %}
+            </p>
+            <br><br>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</body>
+</html>
